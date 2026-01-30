@@ -1,27 +1,22 @@
 <!-- Replace the title of README with your repository name. -->
 
-# `@akistack` Monorepo Starter
+# 🍁 @akistack Monorepo Starter
 
 <!-- Replace the description below with your own description of this monorepo.  -->
 
 Welcome to the Rush monorepo template provided by `@akistack`. This template helps you create a new monorepo that integrates our recommended standards and solutions with less effort.
 
-> Note: This README is for developers. If you want to know how to create monorepo from this template, please refer to [Maintainer's Guide](docs/maintainer-guide.md).
+> Note: This README is for developers. If you want to know how to create monorepo from this template, please refer to [Maintainer's Guide](docs/devops/maintainers-guide.md).
 
 ## Prerequisites
 
 Before you start, ensure you have the following tools installed and configured:
 
 * [Git](https://git-scm.com/install/)
-* [Node.js](https://nodejs.org/) (>= 22 LTS)
-  * We recommend using [fnm](https://fnm.vercel.app) to manage Node.js versions
-  * This repo includes a `.nvmrc` for quick switching
-* [Rush.js](https://www.npmjs.com/package/@microsoft/rush) (@microsoft/rush)
-  * `npm i -g @microsoft/rush`
+* [Node.js](https://nodejs.org/) (>= 22 LTS, We recommend using [fnm](https://fnm.vercel.app) to manage Node.js versions)
+* [Rush.js](https://www.npmjs.com/package/@microsoft/rush) (Install: `npm i -g @microsoft/rush`)
 
 ## Getting Started
-
-> If you are not familiar with Rush.js, refer to the [Rush.js docs](https://rushjs.io/pages/developer/new_developer/) for more details.
 
 ### Clone Repository
 
@@ -34,6 +29,10 @@ cd monorepo-starter
 
 ### Install or Update Dependencies
 
+> This repository use [Rush](https://rushjs.io) and PNPM to manage dependencies. 
+> If you are not familiar with Rush.js, refer to the [Rush.js docs](https://rushjs.io/pages/developer/new_developer/) for more details.
+
+
 ```shell
 ## Installing dependencies
 rush install
@@ -42,20 +41,30 @@ rush install
 rush update
 ```
 
-> * Use `rush install` for installing from the existing lockfile.
-> * Use `rush update` when you change any `package.json` to refresh the lockfile.
+> Use `rush install` for installing from the existing lockfile.
+> 
+> Use `rush update` when you change any `package.json` to refresh the lockfile.
 
 ### Build a Project and/or Its Dependencies
 
 ```shell
-## Building a project `foo` and its dependencies
-rush build -t foo   # equivalent to `rush build --to foo`
-
 ## Building all dependencies of project `foo` except itself
 rush build -T foo   # equivalent to `rush build --to-except foo`
 
+## Building a project `foo` and its dependencies
+rush build -t foo   # equivalent to `rush build --to foo`
+
 ## Building all projects
 rush build
+```
+
+### Project Scripts (rushx)
+
+When you need to run scripts for a specific project, use `rushx` from that project's folder:
+
+```shell
+cd apps/web/app-web-example
+rushx dev
 ```
 
 ### Daily Commands
@@ -68,6 +77,7 @@ rush test:coverage    # with coverage
 ## Run type checking and linting
 rush typecheck
 rush lint
+rush lint:fix
 
 ## Run E2E testing
 rush e2e
@@ -79,16 +89,7 @@ Run `rush init-project` and select a template. Then fill the form with package n
 
 After completion, run `rush update` to install dependencies and update the shrinkwrap file.
 
-### Project Scripts (rushx)
-
-When you need to run scripts for a specific project, use `rushx` from that project's folder:
-
-```shell
-cd apps/web/app-web-example
-rushx dev
-```
-
-## Structure
+## Project Structure
 
 ```
 ├── apps                # Applications (L4)
@@ -119,7 +120,8 @@ This monorepo comes with our recommended stack. We aim to keep the technical sta
 | UI Framework | React |
 | Styling | CSS Modules and Tailwind CSS |
 | Routing | Tanstack Router |
-| Monorepo | Rush.js |
+| Package Manager | PNPM |
+| Monorepo Tool | Rush.js |
 | Bundler | Rstack (Rsbuild / Rspack) |
 | Library Build | Rslib |
 | Lint | Biome |
