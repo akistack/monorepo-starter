@@ -1,0 +1,41 @@
+{
+  "name": "@your-scope/app-web-example",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Example web app built with React &amp; Rsbuild.",
+  "type": "module",
+  "scripts": {
+    "build": "rsbuild build",
+    "dev": "rsbuild dev --open",
+    "e2e": "playwright test",
+    "e2e:init": "playwright install --with-deps",
+    "lint": "biome check",
+    "lint:fix": "biome format --write",
+    "preview": "rsbuild preview",
+    "test": "vitest --run --passWithNoTests",
+    "test:coverage": "npm run test -- --coverage",
+    "typecheck": "tsc -p ./tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@tanstack/react-router": "catalog:solution",
+    "react": "catalog:react",
+    "react-dom": "catalog:react"
+  },
+  "devDependencies": {
+    "@akistack/biome-config": "catalog:infra",
+    "@akistack/tsconfig": "catalog:infra",
+    "@biomejs/biome": "catalog:infra",
+    "@playwright/test": "catalog:solution",
+    "@rsbuild/core": "catalog:solution",
+    "@rsbuild/plugin-react": "catalog:solution",
+    "@tailwindcss/postcss": "catalog:solution",
+    "@tanstack/router-plugin": "catalog:solution",
+    "@types/react": "catalog:react",
+    "@types/react-dom": "catalog:react",
+    "@vitest/coverage-v8": "catalog:solution",
+    "tailwindcss": "catalog:solution",
+    "typescript": "catalog:infra",
+    "vitest": "catalog:solution"
+  },
+  "autor": "Aki"
+}

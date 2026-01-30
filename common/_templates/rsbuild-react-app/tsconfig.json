@@ -1,0 +1,4 @@
+{
+  "extends": "@akistack/tsconfig/web",
+  "include": ["src"]
+}

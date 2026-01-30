@@ -1,0 +1,8 @@
+{
+  "templates": [
+    {
+      "displayName": "(Web) Rsbuild React App",
+      "templateFolder": "rsbuild-react-app"
+    }
+  ]
+}

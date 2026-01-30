@@ -1,0 +1,41 @@
+{
+  "name": "{{ packageName }}",
+  "description": "{{ description }}",
+  "autor": "{{ authorName }}",
+  "version": "1.0.0",
+  "private": true,
+  "type": "{{!comment}}module",
+  "scripts": {
+    "build": "rsbuild build",
+    "dev": "rsbuild dev --open",
+    "e2e": "playwright test",
+    "e2e:init": "playwright install --with-deps",
+    "lint": "biome check",
+    "lint:fix": "biome format --write",
+    "preview": "rsbuild preview",
+    "typecheck": "tsc -p ./tsconfig.json --noEmit",
+    "test": "vitest --run --passWithNoTests",
+    "test:coverage": "npm run test -- --coverage"
+  },
+  "dependencies": {
+    "@tanstack/react-router": "catalog:solution",
+    "react": "catalog:react",
+    "react-dom": "catalog:react"
+  },
+  "devDependencies": {
+    "@akistack/biome-config": "catalog:infra",
+    "@akistack/tsconfig": "catalog:infra",
+    "@biomejs/biome": "catalog:infra",
+    "@playwright/test": "catalog:solution",
+    "@rsbuild/core": "catalog:solution",
+    "@rsbuild/plugin-react": "catalog:solution",
+    "@tanstack/router-plugin": "catalog:solution",
+    "@tailwindcss/postcss": "catalog:solution",
+    "@types/react": "catalog:react",
+    "@types/react-dom": "catalog:react",
+    "@vitest/coverage-v8": "catalog:solution",
+    "tailwindcss": "catalog:solution",
+    "typescript": "catalog:infra",
+    "vitest": "catalog:solution"
+  }
+}

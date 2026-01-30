@@ -1,0 +1,11 @@
+{
+  "name": "infra",
+  "description": "Rush autoinstaller for repo infrastructures, e.g. CLI.",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@akistack/biome-config": "~0.0.4",
+    "@biomejs/biome": "~2.3.13",
+    "typescript": "~5.9.3"
+  }
+}
