@@ -1,0 +1,3 @@
+module.exports = {
+  '**/*.{ts,tsx,js,jsx,mjs,cjs,mts,cts}': 'biome check --write',
+};

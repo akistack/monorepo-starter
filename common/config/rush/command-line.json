@@ -80,10 +80,18 @@
     {
       "name": "commitlint",
       "commandKind": "global",
-      "summary": "(Used by the pre-commit Git hook) Invokes commitlint to check commit message format",
+      "summary": "(Used by the commit-msg Git hook) Invokes commitlint to check commit message format",
       "safeForSimultaneousRushProcesses": true,
       "autoinstallerName": "infra",
       "shellCommand": "commitlint"
+    },
+    {
+      "name": "lint-staged",
+      "commandKind": "global",
+      "summary": "(Used by the pre-commit Git hook) Run linting and formatting checks for the project, and fixing errors automatically",
+      "safeForSimultaneousRushProcesses": true,
+      "autoinstallerName": "infra",
+      "shellCommand": "lint-staged -- --config common/autoinstallers/infra/lint-staged.config.cjs --shell '/bin/bash'"
     },
 
     // {

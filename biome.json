@@ -2,7 +2,7 @@
   "$schema": "./common/autoinstallers/infra/node_modules/@biomejs/biome/configuration_schema.json",
   "extends": ["./common/autoinstallers/infra/node_modules/@akistack/biome-config/biome.json"],
   "files": {
-    "includes": ["**", "!common/temp"]
+    "includes": ["**", "!common/temp", "!common/autoinstallers/infra"]
   },
   "overrides": []
 }
