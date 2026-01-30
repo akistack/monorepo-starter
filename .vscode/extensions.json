@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "fronterior.biome-monorepo",
+    "streetsidesoftware.code-spell-checker",
+    "codezombiech.gitignore",
+    "aaron-bond.better-comments",
+    "mikestead.dotenv",
+    "stylelint.vscode-stylelint",
+    "bradlc.vscode-tailwindcss"
+  ],
+  "unwantedRecommendations": [
+    "nucllear.vscode-extension-auto-import",
+    "steoates.autoimport"
+  ]
+}
