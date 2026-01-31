@@ -409,6 +409,9 @@
       "@rsbuild/core": "^1.7.1",
       "@rsbuild/plugin-react": "^1.4.2",
 
+      // Lib: Rslib
+      "@rslib/core": "^0.19.4",
+
       // Styling: TailwindCSS
       "@tailwindcss/postcss": "^4.1.18",
       "tailwindcss": "^4.1.18",

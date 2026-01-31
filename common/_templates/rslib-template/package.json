@@ -1,0 +1,39 @@
+{
+  "name": "{{ packageName }}",
+  "description": "{{ description }}",
+  "autor": "{{ authorName }}",
+  "version": "1.0.0",
+  "type": "{{!comment}}module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rslib build",
+    "lint": "biome check",
+    "lint:fix": "biome format --write",
+    "dev": "rslib build --watch",
+    "format": "biome format --write",
+    "typecheck": "tsc -p ./tsconfig.json --noEmit",
+    "test": "vitest --run --passWithNoTests",
+    "test:coverage": "npm run test -- --coverage"
+  },
+  "devDependencies": {
+    "@akistack/tsconfig": "catalog:infra",
+    "@akistack/biome-config": "catalog:infra",
+    "@biomejs/biome": "catalog:infra",
+    "@rslib/core": "catalog:solution",
+    "@types/node": "catalog:infra",
+    "@vitest/coverage-v8": "catalog:solution",
+    "typescript": "catalog:infra",
+    "vitest": "catalog:infra"
+  }
+}
