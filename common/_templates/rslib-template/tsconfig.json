@@ -1,4 +1,10 @@
 {
   "extends": "@akistack/tsconfig/base",
-  "include": ["src"]
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "include": [
+    "src"
+  ]
 }

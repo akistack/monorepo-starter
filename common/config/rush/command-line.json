@@ -19,7 +19,8 @@
       "enableParallelism": true,
       "safeForSimultaneousRushProcesses": false,
       "ignoreMissingScript": true,
-      "incremental": true
+      "incremental": true,
+      "allowWarningsInSuccessfulBuild": true
     },
     {
       "commandKind": "bulk",

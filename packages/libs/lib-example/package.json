@@ -8,6 +8,11 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
+    },
+    "./es/*": {
+      "types": "./dist/es/*.d.ts",
+      "import": "./dist/es/*.js",
+      "require": "./dist/es/*.cjs"
     }
   },
   "main": "./dist/index.cjs",
