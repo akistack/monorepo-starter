@@ -1,4 +1,5 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["@akistack/biome-config"]
+  "extends": ["@akistack/biome-config"],
+  "root": false
 }

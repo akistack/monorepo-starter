@@ -2,7 +2,7 @@
   "name": "@your-scope/app-web-example",
   "version": "1.0.0",
   "private": true,
-  "description": "Example web app built with React &amp; Rsbuild.",
+  "description": "Example web app built with React & Rsbuild.",
   "type": "module",
   "scripts": {
     "build": "rsbuild build",

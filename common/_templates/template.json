@@ -6,7 +6,7 @@
     },
     {
       "displayName": "(Library) Rslib",
-      "templateFolder": "rsbuild-react-app-template"
+      "templateFolder": "rslib-template"
     }
   ]
 }

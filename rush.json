@@ -346,10 +346,11 @@
     "app",
     "infra",
     "config",
-    "ui",
+    "components",
     "domain",
     "test",
     "utils",
+    "other",
 
     /**
     * By package level. 
@@ -498,6 +499,13 @@
         "level-4",
         "web",
         "app"
+      ]
+    },
+    {
+      "packageName": "@your-scope/lib-example",
+      "projectFolder": "packages/libs/lib-example",
+      "tags": [
+        "library"
       ]
     }
   ]

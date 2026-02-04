@@ -91,7 +91,7 @@
       "summary": "(Used by the pre-commit Git hook) Run linting and formatting checks for the project, and fixing errors automatically",
       "safeForSimultaneousRushProcesses": true,
       "autoinstallerName": "infra",
-      "shellCommand": "lint-staged -- --config common/autoinstallers/infra/lint-staged.config.cjs --shell '/bin/bash'"
+      "shellCommand": "lint-staged --config common/autoinstallers/infra/lintstaged.config.cjs"
     },
 
     // {
