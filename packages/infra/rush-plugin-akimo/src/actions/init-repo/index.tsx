@@ -5,7 +5,7 @@ import { confirm, input } from '@inquirer/prompts';
 import chalk from 'chalk';
 import { render } from 'ink';
 import { DEV, withDryrun } from '../../common/env';
-import { getCurrentGitUserInfo, resetGitRepositoryHistory } from '../../common/git';
+import { getCurrentGitUserInfo, getCurrentOriginUrl, resetGitRepositoryHistory } from '../../common/git';
 import { getIacConfig, removeIacConfig, updateIacConfig } from '../../common/iac';
 import { debug, echo, info, success } from '../../common/logger';
 import {
@@ -15,6 +15,8 @@ import {
   updateRushConfiguration,
 } from '../../common/rush';
 import { allowedCharacters, notEmpty, startsWith, validate } from '../../common/validate';
+import type { IacConfig } from '../../types';
+import { removeDocTemplatesFolder, renderReadme } from './doc';
 import { Progress } from './progress';
 
 // #region form
@@ -32,6 +34,18 @@ async function inquery() {
       notEmpty(value, 'Scope') || startsWith(value, '@', 'Scope') || allowedCharacters(value.slice(1), 'Scope'),
   });
 
+  const repoDescription = await input({
+    message: 'Enter the description of the monorepo:',
+    default: `A monorepo for ${repoName}.`,
+  });
+
+  const defaultRepoUrl = getCurrentOriginUrl();
+
+  const repoUrl = await input({
+    message: 'Enter the URL of the Git repository:',
+    default: defaultRepoUrl ?? undefined,
+  });
+
   const preserveExampleProjects = await confirm({
     message: 'Do you want to preserve the example projects?',
     default: false,
@@ -42,7 +56,7 @@ async function inquery() {
     default: !DEV,
   });
 
-  return { repoName, repoScope, preserveExampleProjects, reInitializeGit };
+  return { repoName, repoScope, repoDescription, repoUrl, preserveExampleProjects, reInitializeGit };
 }
 
 // #region actions
@@ -52,15 +66,22 @@ async function createIacConfig(
 ) {
   const instance = render(<Progress action="Creating IaC configuration..." loading={true} />);
 
-  await updateIacConfig({
+  const iacConfig = {
     repoName: form.repoName,
+    repoDescription: form.repoDescription,
+    repoUrl: form.repoUrl,
     scope: form.repoScope,
     maintainers: [`${currentGitUserInfo.name} <${currentGitUserInfo.email}>`],
     createdAt: new Date(),
-  });
+    updatedAt: new Date(),
+  };
+
+  await updateIacConfig(iacConfig);
 
   instance.rerender(<Progress action="IaC configuration created successfully" loading={false} />);
   instance.unmount();
+
+  return iacConfig;
 }
 
 async function resetGitRepositoryHistoryIfNeeded(form: Awaited<ReturnType<typeof inquery>>) {
@@ -134,6 +155,17 @@ async function runRushUpdate() {
   instance.unmount();
 }
 
+async function renderDocuments(params: IacConfig) {
+  const instance = render(<Progress action="Preparing documents..." loading={true} />);
+  instance.unmount();
+
+  await withDryrun(() => renderReadme(params));
+  await withDryrun(() => removeDocTemplatesFolder());
+
+  instance.rerender(<Progress action="Documents created." loading={false} />);
+  instance.unmount();
+}
+
 // #region handler
 
 /** Initialize akistack monorepo when first created */
@@ -142,8 +174,10 @@ export async function initRepoHandler() {
   if (DEV) {
     await removeIacConfig();
   }
-  const iacConfig = await getIacConfig();
-  validate(!iacConfig, 'Seems like this repository is already initialized. No need to run `init` command again.');
+  validate(
+    !(await getIacConfig()),
+    'Seems like this repository is already initialized. No need to run `init` command again.',
+  );
 
   const rushRoot = getRushWorkspaceConfiguration().rushJsonFolder;
   validate(rushRoot, 'You must run this command inside a valid Rush workspace.');
@@ -163,9 +197,10 @@ export async function initRepoHandler() {
   echo('');
 
   // actions
-  await createIacConfig(form, currentGitUserInfo);
+  const iacConfig = await createIacConfig(form, currentGitUserInfo);
   await resetGitRepositoryHistoryIfNeeded(form);
   await removeExampleProjectsIfNeeded(form);
+  await renderDocuments(iacConfig);
   await runRushUpdate();
 
   // success

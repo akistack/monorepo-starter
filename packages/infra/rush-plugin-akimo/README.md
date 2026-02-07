@@ -1,23 +1,42 @@
-# Rslib project
+# @akistack/rush-plugin-akimo
 
-## Setup
+Rush plugin for managing monorepo created from `@akistack/monorepo-starter`.
+
+## Usage in `@akistack/monorepo-starter`
+
+```
+rush akimo
+```
+
+## Supported Operations
+
+### `init`
+
+Initialize a new monorepo after you cloned the starter template. 
+
+This operation will render essential files and create an IaC configuration file under `common/.iac`.
+
+## Develop Guide
 
 Install the dependencies:
 
-```bash
-pnpm install
+```shell
+rush install
 ```
 
-## Get started
+For local development:
 
-Build the library:
-
-```bash
-pnpm run build
+```shell
+rushx dev
+rushx drytun   # dryrun
 ```
 
-Build the library in watch mode:
+> Dry-run will skip all procedures wrapped with `withDryrun()`.
 
-```bash
-pnpm run dev
+Build:
+
 ```
+pnpm build
+```
+
+See also: [Creating Rush plugins](https://rushjs.io/pages/extensibility/creating_plugins/).

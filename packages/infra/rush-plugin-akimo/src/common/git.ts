@@ -16,6 +16,16 @@ export function getCurrentGitUserInfo() {
   };
 }
 
+export function getCurrentOriginUrl() {
+  try {
+    const originUrl = execSync('git config remote.origin.url');
+    return originUrl.toString().trim();
+  } catch (error) {
+    debug('Failed to get current origin URL: ', error);
+    return null;
+  }
+}
+
 /** Warning: dangerous operation, only use when initialize repo first time */
 export async function resetGitRepositoryHistory() {
   // check if .git directory exists

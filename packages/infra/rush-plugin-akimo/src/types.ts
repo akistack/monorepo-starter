@@ -14,6 +14,8 @@ export const AcceptCommandsConfig = [
 export interface IacConfig {
   repoName: string;
   scope: string;
+  repoDescription?: string;
+  repoUrl?: string;
   maintainers: string[];
   createdAt: Date;
   updatedAt: Date;

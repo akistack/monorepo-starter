@@ -3,6 +3,7 @@
 import { ExitPromptError } from '@inquirer/core';
 import { select } from '@inquirer/prompts';
 import chalk from 'chalk';
+import { DRYRUN } from './common/env';
 import { getIacConfig } from './common/iac';
 import { debug, echo } from './common/logger';
 import { commandHandler } from './handler';
@@ -14,6 +15,10 @@ async function main() {
     const repoName = `${iacConfig?.scope ?? '@akistack'}/${iacConfig?.repoName ?? 'monorepo'}`;
 
     echo(chalk.green(`\n🍁 Welcome to ${repoName}!\n`));
+
+    if (DRYRUN) {
+      echo(chalk.yellow('🚧 Dry run mode is enabled. Some operations will be skipped.\n'));
+    }
 
     const operation = await select({
       message: 'Select the operation to run:',
