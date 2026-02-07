@@ -34,6 +34,11 @@
       "packageName": "rush-sort-package-json",
       "pluginName": "rush-sort-package-json",
       "autoinstallerName": "plugins"
-    }    
+    },
+    {
+      "packageName": "@akistack/rush-plugin-akimo",
+      "pluginName": "rush-plugin-akimo",
+      "autoinstallerName": "plugins"
+    }
   ]
 }

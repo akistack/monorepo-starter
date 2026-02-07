@@ -505,6 +505,15 @@
       "packageName": "@your-scope/lib-example",
       "projectFolder": "packages/libs/lib-example",
       "tags": [
+        "level-1",
+        "library"
+      ]
+    },
+    {
+      "packageName": "@akistack/rush-plugin-akimo",
+      "projectFolder": "packages/infra/rush-plugin-akimo",
+      "tags": [
+        "level-0",
         "library"
       ]
     }
