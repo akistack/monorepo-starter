@@ -5,7 +5,7 @@
       "name": "akimo",
       "commandKind": "global",
       "summary": "Run @akistack monorepo utils to initialize or manage your monorepo.",
-      "shellCommand": "akimo",
+      "shellCommand": "node <packageFolder>/dist/index.js",
       "safeForSimultaneousRushProcesses": true
     }
   ],

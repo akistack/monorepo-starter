@@ -1,12 +1,6 @@
-<!-- Replace the title of README with your repository name. -->
-
 # 🍁 @akistack Monorepo Starter
 
-<!-- Replace the description below with your own description of this monorepo.  -->
-
 Welcome to the Rush monorepo template provided by `@akistack`. This template helps you create a new monorepo that integrates our recommended standards and solutions with less effort.
-
-> Note: This README is for developers. If you want to know how to create monorepo from this template, please refer to [Maintainer's Guide](docs/devops/maintainers-guide.md).
 
 ## Prerequisites
 
@@ -18,70 +12,39 @@ Before you start, ensure you have the following tools installed and configured:
 
 ## Getting Started
 
-### Clone Repository
+### Creating a New Monorepo from Template
 
-<!-- Replace the following Git address with your own repo. -->
+1. Create a new repository in GitHub (or other codebase services): https://github.com/new
+
+2. Clone this repo:
 
 ```shell
-git clone git@github.com:akistack/monorepo-starter.git
-cd monorepo-starter
+git clone git@github.com:akistack/monorepo-starter.git my-project --depth 1
+cd my-project
 ```
 
-### Install or Update Dependencies
-
-> This repository use [Rush](https://rushjs.io) and PNPM to manage dependencies. 
-> If you are not familiar with Rush.js, refer to the [Rush.js docs](https://rushjs.io/pages/developer/new_developer/) for more details.
-
+3. Install dependencies:
 
 ```shell
-## Installing dependencies
-rush install
-
-## Updating dependencies and shrinkwrap file
 rush update
 ```
 
-> Use `rush install` for installing from the existing lockfile.
-> 
-> Use `rush update` when you change any `package.json` to refresh the lockfile.
-
-### Build a Project and/or Its Dependencies
+4. Run `akimo` monorepo initialization wizard:
 
 ```shell
-## Building all dependencies of project `foo` except itself
-rush build -T foo   # equivalent to `rush build --to-except foo`
-
-## Building a project `foo` and its dependencies
-rush build -t foo   # equivalent to `rush build --to foo`
-
-## Building all projects
-rush build
+rush akimo
 ```
 
-### Project Scripts (rushx)
+Select `init`, then follow the prompt to initialize the repo.
 
-When you need to run scripts for a specific project, use `rushx` from that project's folder:
+5. Commit and push:
 
 ```shell
-cd apps/web/app-web-example
-rushx dev
+git add -A
+git commit -m "feat(all): initialize monorepo from template"
+git push -u origin main
 ```
 
-### Daily Commands
-
-```shell
-## Run unit tests for projects
-rush test
-rush test:coverage    # with coverage
-
-## Run type checking and linting
-rush typecheck
-rush lint
-rush lint:fix
-
-## Run E2E testing
-rush e2e
-```
 
 ### Initializing a New Project
 
