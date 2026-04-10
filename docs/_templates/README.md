@@ -118,7 +118,8 @@ This monorepo comes with our recommended stack. We aim to keep the technical sta
 | Monorepo Tool | Rush.js |
 | Bundler | Rstack (Rsbuild / Rspack) |
 | Library Build | Rslib |
-| Lint | Biome |
+| Lint | Oxlint |
+| Formatter | Oxfmt |
 | Unit Testing | Vitest |
 | Component Testing | Testing Library |
 | E2E Testing | Playwright |

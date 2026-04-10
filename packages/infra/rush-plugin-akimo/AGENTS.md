@@ -15,7 +15,7 @@ You are an expert in JavaScript, Rspack, Rsbuild, Rslib, and library development
 
 ## Tools
 
-### Biome
+### Oxlint
 
 - Run `pnpm run lint` to lint your code
 

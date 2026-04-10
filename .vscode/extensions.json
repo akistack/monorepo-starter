@@ -1,7 +1,7 @@
 {
   "recommendations": [
     "editorconfig.editorconfig",
-    "fronterior.biome-monorepo",
+    "oxc.oxc-vscode",
     "streetsidesoftware.code-spell-checker",
     "codezombiech.gitignore",
     "aaron-bond.better-comments",
