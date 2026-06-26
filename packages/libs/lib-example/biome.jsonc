@@ -1,5 +1,0 @@
-{
-  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["../../../common/autoinstallers/infra/node_modules/@akistack/biome-config/biome.json"],
-  "root": false
-}

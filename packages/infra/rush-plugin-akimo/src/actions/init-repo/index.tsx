@@ -1,9 +1,11 @@
 import { spawn } from 'node:child_process';
 import { rm } from 'node:fs/promises';
 import path from 'node:path/posix';
+
 import { confirm, input } from '@inquirer/prompts';
 import chalk from 'chalk';
 import { render } from 'ink';
+
 import { DEV, withDryrun } from '../../common/env';
 import { getCurrentGitUserInfo, getCurrentOriginUrl, resetGitRepositoryHistory } from '../../common/git';
 import { getIacConfig, removeIacConfig, updateIacConfig } from '../../common/iac';
@@ -31,7 +33,9 @@ async function inquery() {
     message: 'Enter the scope of the your organization (e.g. @akistack):',
     default: '@akistack',
     validate: (value) =>
-      notEmpty(value, 'Scope') || startsWith(value, '@', 'Scope') || allowedCharacters(value.slice(1), 'Scope'),
+      notEmpty(value, 'Scope') ||
+      startsWith(value, '@', 'Scope') ||
+      allowedCharacters(value.slice(1), 'Scope'),
   });
 
   const repoDescription = await input({
@@ -120,10 +124,12 @@ async function removeExampleProjectsIfNeeded(form: Awaited<ReturnType<typeof inq
     });
 
     // remove projects directory
-    for (const project of exampleProjects) {
-      debug(`Removing project: ${project.packageName} at ${path.join(rushRoot, project.projectFolder)}`);
-      await rm(project.projectFolder, { recursive: true });
-    }
+    await Promise.all(
+      exampleProjects.map((project) => {
+        debug(`Removing project: ${project.packageName} at ${path.join(rushRoot, project.projectFolder)}`);
+        return rm(project.projectFolder, { recursive: true });
+      }),
+    );
   });
 
   instance.rerender(<Progress action="Example projects removed" loading={false} />);
@@ -131,7 +137,9 @@ async function removeExampleProjectsIfNeeded(form: Awaited<ReturnType<typeof inq
 }
 
 async function runRushUpdate() {
-  let instance = render(<Progress action="Running `rush update` to update shrinkwrap file..." loading={true} />);
+  let instance = render(
+    <Progress action="Running `rush update` to update shrinkwrap file..." loading={true} />,
+  );
   instance.unmount();
 
   await withDryrun(
@@ -205,7 +213,9 @@ export async function initRepoHandler() {
 
   // success
   echo('');
-  success(chalk.green(`🎉 Congratulations! ${repoScope}/${repoName} monorepo has been initialized successfully!\n`));
+  success(
+    chalk.green(`🎉 Congratulations! ${repoScope}/${repoName} monorepo has been initialized successfully!\n`),
+  );
 
   echo('You can commit the changes and push to the repository by running the following commands:\n');
   echo(chalk.blue('   git add .'));

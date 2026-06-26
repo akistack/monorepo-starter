@@ -1,7 +1,9 @@
 import { existsSync } from 'node:fs';
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+
 import { merge } from '@rushstack/rush-sdk/lib/utilities/objectUtilities';
+
 import type { IacConfig } from '../types';
 import { debug, error } from './logger';
 import { getRushWorkspaceConfiguration } from './rush';
@@ -29,7 +31,7 @@ export async function getIacConfig() {
     const file = await readFile(iacConfig, 'utf-8');
     return JSON.parse(file) as IacConfig;
   } catch (err) {
-    error(`Failed to load IaC configuration: ${err}`);
+    error(`Failed to load IaC configuration: ${String(err)}`);
     process.exit(1);
   }
 }
@@ -52,7 +54,7 @@ export async function updateIacConfig(update: Partial<IacConfig>) {
 
     await writeFile(iacConfigPath, JSON.stringify(nextConfig, null, 2));
   } catch (err) {
-    error(`Failed to update IaC configuration: ${err}`);
+    error(`Failed to update IaC configuration: ${String(err)}`);
     process.exit(1);
   }
 }

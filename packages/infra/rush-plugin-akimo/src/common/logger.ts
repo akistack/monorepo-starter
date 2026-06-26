@@ -1,4 +1,4 @@
-/** biome-ignore-all lint/suspicious/noConsole: console application */
+/* oxlint-disable no-console */
 
 import chalk from 'chalk';
 

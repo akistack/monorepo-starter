@@ -2,7 +2,12 @@
   "name": "@your-scope/lib-example",
   "version": "1.0.0",
   "description": "Example library package.",
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -15,28 +20,25 @@
       "require": "./dist/es/*.cjs"
     }
   },
-  "main": "./dist/index.cjs",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "build": "rslib build",
     "dev": "rslib build --watch",
-    "format": "biome format --write",
-    "lint": "biome check",
-    "lint:fix": "biome format --write",
+    "format": "oxfmt --write",
+    "lint": "oxlint --type-aware",
+    "lint:fix": "oxlint --fix --type-aware && oxfmt --write",
     "test": "vitest --run --passWithNoTests",
     "test:coverage": "npm run test -- --coverage",
     "typecheck": "tsc -p ./tsconfig.json --noEmit"
   },
   "devDependencies": {
-    "@akistack/biome-config": "catalog:infra",
+    "@akistack/oxlint-config": "catalog:infra",
     "@akistack/tsconfig": "catalog:infra",
-    "@biomejs/biome": "catalog:infra",
     "@rslib/core": "catalog:solution",
     "@types/node": "catalog:infra",
     "@vitest/coverage-v8": "catalog:solution",
+    "oxfmt": "catalog:infra",
+    "oxlint": "catalog:infra",
+    "oxlint-tsgolint": "catalog:infra",
     "typescript": "catalog:infra",
     "vitest": "catalog:solution"
   }

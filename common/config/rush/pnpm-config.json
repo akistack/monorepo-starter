@@ -393,14 +393,12 @@
   "globalCatalogs": {
     "infra": {
       "@akistack/tsconfig": "~0.0.8",
-      "@akistack/biome-config": "~0.0.4",
-      "@akistack/oxlint-config": "0.0.4",
-      "@biomejs/biome": "^2.3.13",
+      "@akistack/oxlint-config": "^0.0.4",
       "@types/node": "^25.1.0",
-      "typescript": "~5.9.3",
+      "oxfmt": "~0.44.0",
       "oxlint": "~1.59.0",
       "oxlint-tsgolint": "~0.20.0",
-      "oxfmt": "~0.44.0"
+      "typescript": "~5.9.3"
     },
     "react": {
       "@types/react": "^19.2.6",

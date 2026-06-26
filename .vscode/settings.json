@@ -5,9 +5,8 @@
     "**/common/config/rush/*.json": "jsonc"
   },
   // Linting & formatting
-  "oxc.path.oxlint": "./common/autoinstallers/infra/node_modules/.bin/oxlint",
-  "oxc.path.oxfmt": "./common/autoinstallers/infra/node_modules/.bin/oxfmt",
-  "oxc.path.tsgolint": "./common/autoinstallers/infra/node_modules/.bin/tsgolint",
+  "oxc.path.oxfmt": "./common/autoinstallers/infra/node_modules/oxfmt/bin/oxfmt",
+  "oxc.path.oxlint": "./common/autoinstallers/infra/node_modules/oxlint/bin/oxlint",
   "[typescript]": {
     "editor.defaultFormatter": "oxc.oxc-vscode",
     "editor.formatOnSave": true,
@@ -43,9 +42,5 @@
   "editor.quickSuggestions": {
     "strings": "on"
   },
-  "tailwindCSS.classFunctions": [
-    "tw",
-    "clsx",
-    "tw\\.[a-z-]+"
-  ]
+  "tailwindCSS.classFunctions": ["tw", "clsx", "tw\\.[a-z-]+"]
 }
