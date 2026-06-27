@@ -1,6 +1,8 @@
 import { readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path/posix';
+
 import ejs from 'ejs';
+
 import { getRushWorkspaceConfiguration } from '../../common/rush';
 import type { IacConfig } from '../../types';
 

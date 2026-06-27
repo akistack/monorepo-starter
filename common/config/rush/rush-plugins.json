@@ -36,8 +36,8 @@
       "autoinstallerName": "plugins"
     },
     {
-      "packageName": "@akistack/rush-plugin-akimo",
-      "pluginName": "rush-plugin-akimo",
+      "packageName": "@akistack/rush-plugin-akimono",
+      "pluginName": "rush-plugin-akimono",
       "autoinstallerName": "plugins"
     }
   ]

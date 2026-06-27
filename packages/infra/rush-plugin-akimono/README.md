@@ -1,11 +1,11 @@
-# @akistack/rush-plugin-akimo
+# @akistack/rush-plugin-akimono
 
 Rush plugin for managing monorepo created from `@akistack/monorepo-starter`.
 
 ## Usage in `@akistack/monorepo-starter`
 
 ```
-rush akimo
+rush akimono
 ```
 
 ## Supported Operations

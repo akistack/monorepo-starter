@@ -2,6 +2,7 @@ import { execSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { mkdir, rename } from 'node:fs/promises';
 import path from 'node:path/posix';
+
 import { getIacConfigFolder } from './iac';
 import { debug, warn } from './logger';
 import { getRushWorkspaceConfiguration } from './rush';

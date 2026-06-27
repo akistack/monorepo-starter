@@ -510,8 +510,8 @@
       ]
     },
     {
-      "packageName": "@akistack/rush-plugin-akimo",
-      "projectFolder": "packages/infra/rush-plugin-akimo",
+      "packageName": "@akistack/rush-plugin-akimono",
+      "projectFolder": "packages/infra/rush-plugin-akimono",
       "tags": [
         "level-0",
         "library"

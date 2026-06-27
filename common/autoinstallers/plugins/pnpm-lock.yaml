@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@akistack/rush-plugin-akimo':
-        specifier: ../../../packages/infra/rush-plugin-akimo
-        version: link:../../../packages/infra/rush-plugin-akimo
+      '@akistack/rush-plugin-akimono':
+        specifier: ../../../packages/infra/rush-plugin-akimono
+        version: link:../../../packages/infra/rush-plugin-akimono
       rush-init-project-plugin:
         specifier: ^0.11.1
         version: 0.11.1(@types/node@25.2.1)(typescript@5.9.3)

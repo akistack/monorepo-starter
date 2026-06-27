@@ -1,6 +1,7 @@
 import { JsonFile } from '@rushstack/node-core-library';
 import { RushConfiguration } from '@rushstack/rush-sdk';
 import { merge } from '@rushstack/rush-sdk/lib/utilities/objectUtilities';
+
 import { error } from './logger';
 import { validate } from './validate';
 

@@ -29,10 +29,10 @@ cd my-project
 rush update
 ```
 
-4. Run `akimo` monorepo initialization wizard:
+4. Run `akimono` monorepo initialization wizard:
 
 ```shell
-rush akimo
+rush akimono
 ```
 
 Select `init`, then follow the prompt to initialize the repo.

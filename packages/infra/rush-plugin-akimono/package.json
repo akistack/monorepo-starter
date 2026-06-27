@@ -1,12 +1,14 @@
 {
-  "name": "@akistack/rush-plugin-akimo",
+  "name": "@akistack/rush-plugin-akimono",
   "version": "1.0.0",
   "description": "@akistack monorepo utils",
   "bin": {
-    "akimo": "dist/index.js"
+    "akimono": "dist/index.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "rush-plugin-manifest.json",
+    "command-line.json"
   ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
