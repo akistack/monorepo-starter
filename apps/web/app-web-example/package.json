@@ -9,8 +9,9 @@
     "dev": "rsbuild dev --open",
     "e2e": "playwright test",
     "e2e:init": "playwright install --with-deps",
-    "lint": "biome check",
-    "lint:fix": "biome format --write",
+    "format": "oxfmt --write",
+    "lint": "oxlint --type-aware",
+    "lint:fix": "oxlint --type-aware --fix",
     "preview": "rsbuild preview",
     "test": "vitest --run --passWithNoTests",
     "test:coverage": "npm run test -- --coverage",
@@ -22,9 +23,8 @@
     "react-dom": "catalog:react"
   },
   "devDependencies": {
-    "@akistack/biome-config": "catalog:infra",
+    "@akistack/oxlint-config": "catalog:infra",
     "@akistack/tsconfig": "catalog:infra",
-    "@biomejs/biome": "catalog:infra",
     "@playwright/test": "catalog:solution",
     "@rsbuild/core": "catalog:solution",
     "@rsbuild/plugin-react": "catalog:solution",
@@ -33,6 +33,9 @@
     "@types/react": "catalog:react",
     "@types/react-dom": "catalog:react",
     "@vitest/coverage-v8": "catalog:solution",
+    "oxfmt": "catalog:infra",
+    "oxlint": "catalog:infra",
+    "oxlint-tsgolint": "catalog:infra",
     "tailwindcss": "catalog:solution",
     "typescript": "catalog:infra",
     "vitest": "catalog:solution"

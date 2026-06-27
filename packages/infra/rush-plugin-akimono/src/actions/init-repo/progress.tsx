@@ -22,7 +22,6 @@ export function Progress(props: { action: string; color?: string; loading: boole
             .map((line, index) => (
               <Text key={index}>
                 {line}
-                {/* biome-ignore lint/style/useConsistentCurlyBraces: biome is dumb */}
                 {'\n'}
               </Text>
             ))}

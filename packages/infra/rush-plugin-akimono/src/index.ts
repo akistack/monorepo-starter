@@ -3,6 +3,7 @@
 import { ExitPromptError } from '@inquirer/core';
 import { select } from '@inquirer/prompts';
 import chalk from 'chalk';
+
 import { DRYRUN } from './common/env';
 import { getIacConfig } from './common/iac';
 import { debug, echo } from './common/logger';

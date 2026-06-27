@@ -29,10 +29,10 @@ cd my-project
 rush update
 ```
 
-4. Run `akimo` monorepo initialization wizard:
+4. Run `akimono` monorepo initialization wizard:
 
 ```shell
-rush akimo
+rush akimono
 ```
 
 Select `init`, then follow the prompt to initialize the repo.
@@ -87,8 +87,8 @@ This monorepo comes with our recommended stack. We aim to keep the technical sta
 | Monorepo Tool | Rush.js |
 | Bundler | Rstack (Rsbuild / Rspack) |
 | Library Build | Rslib |
-| Lint | Biome |
-| Unit Testing | Vitest |
+| Lint | Oxlint |
+| Formatter | Oxfmt || Unit Testing | Vitest |
 | Component Testing | Testing Library |
 | E2E Testing | Playwright |
 
