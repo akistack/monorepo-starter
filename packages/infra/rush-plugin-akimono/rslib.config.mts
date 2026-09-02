@@ -5,6 +5,7 @@ export default defineConfig({
   lib: [
     {
       format: 'cjs',
+      syntax: ['node 22'],
       dts: false,
     },
   ],
@@ -16,11 +17,5 @@ export default defineConfig({
       'utf-8-validate',
     ],
   },
-  plugins: [
-    pluginReact({
-      swcReactOptions: {
-        runtime: 'automatic',
-      },
-    }),
-  ],
+  plugins: [pluginReact()],
 });

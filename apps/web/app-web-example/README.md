@@ -1,4 +1,6 @@
-# Rsbuild project
+# Rsbuild 2 project
+
+This example uses React 19, TanStack Router, and Tailwind CSS 4 through the official Rsbuild Tailwind CSS plugin.
 
 ## Setup
 

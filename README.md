@@ -80,15 +80,16 @@ This monorepo comes with our recommended stack. We aim to keep the technical sta
 | Area | Recommended Framework / Library |
 |-------|---------------------------------|
 | Language | TypeScript-first |
-| UI Framework | React |
-| Styling | CSS Modules and Tailwind CSS |
+| UI Framework | React 19 |
+| Styling | CSS Modules and Tailwind CSS 4 |
 | Routing | Tanstack Router |
 | Package Manager | PNPM |
 | Monorepo Tool | Rush.js |
-| Bundler | Rstack (Rsbuild / Rspack) |
-| Library Build | Rslib |
+| Bundler | Rstack (Rsbuild 2 / Rspack 2) |
+| Library Build | Rslib 0.23 |
 | Lint | Oxlint |
-| Formatter | Oxfmt || Unit Testing | Vitest |
+| Formatter | Oxfmt |
+| Unit Testing | Vitest |
 | Component Testing | Testing Library |
 | E2E Testing | Playwright |
 

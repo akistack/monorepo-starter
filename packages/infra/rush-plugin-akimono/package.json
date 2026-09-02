@@ -13,8 +13,8 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "rslib build",
-    "dev": "rslib build && NODE_ENV=development node ./dist/index.js",
+    "build": "rslib",
+    "dev": "rslib && NODE_ENV=development node ./dist/index.js",
     "dryrun": "DRYRUN=true npm run dev",
     "format": "oxfmt --write",
     "lint": "oxlint --type-aware",

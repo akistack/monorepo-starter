@@ -28,7 +28,7 @@
     "@playwright/test": "catalog:solution",
     "@rsbuild/core": "catalog:solution",
     "@rsbuild/plugin-react": "catalog:solution",
-    "@tailwindcss/postcss": "catalog:solution",
+    "@rsbuild/plugin-tailwindcss": "catalog:solution",
     "@tanstack/router-plugin": "catalog:solution",
     "@types/react": "catalog:react",
     "@types/react-dom": "catalog:react",

@@ -33,10 +33,10 @@ rushx drytun   # dryrun
 
 > Dry-run will skip all procedures wrapped with `withDryrun()`.
 
-Build:
+Build the Node.js 22 output with Rslib:
 
 ```
-pnpm build
+rushx build
 ```
 
 See also: [Creating Rush plugins](https://rushjs.io/pages/extensibility/creating_plugins/).

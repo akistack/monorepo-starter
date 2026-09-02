@@ -401,22 +401,22 @@
       "typescript": "~5.9.3"
     },
     "react": {
-      "@types/react": "^19.2.6",
-      "@types/react-dom": "^19.2.3",
-      "react": "^19.2.4",
-      "react-dom": "^19.2.4"
+      "@types/react": "^19.2.18",
+      "@types/react-dom": "^19.2.5",
+      "react": "^19.2.8",
+      "react-dom": "^19.2.8"
     },
     "solution": {
       // Bundler: Rspack / Rsbuild
-      "@rsbuild/core": "^1.7.1",
-      "@rsbuild/plugin-react": "^1.4.2",
+      "@rsbuild/core": "^2.2.2",
+      "@rsbuild/plugin-react": "^2.1.0",
+      "@rsbuild/plugin-tailwindcss": "^2.0.3",
 
       // Lib: Rslib
-      "@rslib/core": "^0.19.4",
+      "@rslib/core": "^0.23.2",
 
       // Styling: TailwindCSS
-      "@tailwindcss/postcss": "^4.1.18",
-      "tailwindcss": "^4.1.18",
+      "tailwindcss": "^4.3.3",
 
       // Unit test framework: Vitest
       "@vitest/coverage-v8": "^4.0.18",
@@ -430,8 +430,8 @@
       "@playwright/test": "^1.58.0",
 
       // Routing: Tanstack Router
-      "@tanstack/react-router": "^1.157.16",
-      "@tanstack/router-plugin": "^1.157.16"
+      "@tanstack/react-router": "^1.170.32",
+      "@tanstack/router-plugin": "^1.168.35"
     }
   }
 }

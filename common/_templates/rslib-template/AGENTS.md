@@ -15,7 +15,7 @@ You are an expert in JavaScript, Rspack, Rsbuild, Rslib, and library development
 
 ## Tools
 
-### Oxfmt
+### Oxfmt and Oxlint
 
 - Run `pnpm run lint` to lint your code
 - Run `pnpm run format` to format your code
