@@ -5,6 +5,10 @@
       "templateFolder": "rsbuild-react-app-template"
     },
     {
+      "displayName": "(Server) NestJS App",
+      "templateFolder": "nestjs-fastify-app-template"
+    },
+    {
       "displayName": "(Library) Rslib",
       "templateFolder": "rslib-template"
     }

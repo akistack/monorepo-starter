@@ -1,0 +1,45 @@
+{
+  "name": "{{ packageName }}",
+  "version": "1.0.0",
+  "private": true,
+  "description": "{{ description }}",
+  "type": "{{!comment}}module",
+  "scripts": {
+    "build": "nest build",
+    "dev": "nest start --watch",
+    "format": "oxfmt --write",
+    "lint": "oxlint --type-aware",
+    "lint:fix": "oxlint --type-aware --fix && oxfmt --write",
+    "start": "nest start",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main.js",
+    "test": "rstest",
+    "test:coverage": "npm run test -- --coverage",
+    "test:watch": "rstest --watch",
+    "typecheck": "tsc -p ./tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@nestjs/common": "catalog:nestjs",
+    "@nestjs/core": "catalog:nestjs",
+    "@nestjs/platform-fastify": "catalog:nestjs",
+    "reflect-metadata": "catalog:nestjs",
+    "rxjs": "catalog:nestjs"
+  },
+  "devDependencies": {
+    "@akistack/oxlint-config": "catalog:infra",
+    "@nestjs/cli": "catalog:nestjs",
+    "@nestjs/schematics": "catalog:nestjs",
+    "@nestjs/testing": "catalog:nestjs",
+    "@rspack/core": "catalog:solution",
+    "@rstest/core": "catalog:solution",
+    "@rstest/coverage-v8": "catalog:solution",
+    "@types/node": "catalog:infra",
+    "oxfmt": "catalog:infra",
+    "oxlint": "catalog:infra",
+    "oxlint-tsgolint": "catalog:infra",
+    "tsconfig-paths-webpack-plugin": "catalog:nestjs",
+    "typescript": "catalog:infra",
+    "webpack-node-externals": "catalog:nestjs"
+  },
+  "autor": "{{ authorName }}"
+}
