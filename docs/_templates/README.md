@@ -117,10 +117,10 @@ This monorepo comes with our recommended stack. We aim to keep the technical sta
 | Package Manager | PNPM |
 | Monorepo Tool | Rush.js |
 | Bundler | Rstack (Rsbuild 2 / Rspack 2) |
-| Library Build | Rslib 0.23 |
+| Library Build | Rslib 1 |
 | Lint | Oxlint |
 | Formatter | Oxfmt |
-| Unit Testing | Vitest |
+| Unit Testing | Rstest |
 | Component Testing | Testing Library |
 | E2E Testing | Playwright |
 

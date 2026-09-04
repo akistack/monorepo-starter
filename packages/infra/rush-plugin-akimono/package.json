@@ -20,7 +20,7 @@
     "lint": "oxlint --type-aware",
     "lint:fix": "oxlint --fix --type-aware && oxfmt --write",
     "postinstall": "npm run build",
-    "test": "vitest --run --passWithNoTests",
+    "test": "rstest",
     "test:coverage": "npm run test -- --coverage",
     "typecheck": "tsc -p ./tsconfig.json --noEmit"
   },
@@ -37,10 +37,12 @@
     "@akistack/tsconfig": "catalog:infra",
     "@rsbuild/plugin-react": "catalog:solution",
     "@rslib/core": "catalog:solution",
+    "@rstest/adapter-rslib": "catalog:solution",
+    "@rstest/core": "catalog:solution",
+    "@rstest/coverage-v8": "catalog:solution",
     "@types/ejs": "~3.1.5",
     "@types/node": "catalog:infra",
     "@types/react": "catalog:react",
-    "@vitest/coverage-v8": "catalog:solution",
     "chalk": "~5.6.2",
     "ink": "~6.6.0",
     "ink-spinner": "~5.0.0",
@@ -48,8 +50,7 @@
     "oxlint": "catalog:infra",
     "oxlint-tsgolint": "catalog:infra",
     "react": "catalog:react",
-    "typescript": "catalog:infra",
-    "vitest": "catalog:solution"
+    "typescript": "catalog:infra"
   },
   "autor": "Aki"
 }

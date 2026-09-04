@@ -19,6 +19,6 @@ You are an expert in JavaScript, Rspack, Rsbuild, Rslib, and library development
 
 - Run `pnpm run lint` to lint your code
 
-### Vitest
+### Rstest
 
 - Run `pnpm run test` to test your code

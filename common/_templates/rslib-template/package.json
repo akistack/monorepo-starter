@@ -26,7 +26,7 @@
     "format": "oxfmt --write",
     "lint": "oxlint --type-aware",
     "lint:fix": "oxlint --fix --type-aware && oxfmt --write",
-    "test": "vitest --run --passWithNoTests",
+    "test": "rstest",
     "test:coverage": "npm run test -- --coverage",
     "typecheck": "tsc -p ./tsconfig.json --noEmit"
   },
@@ -34,13 +34,14 @@
     "@akistack/oxlint-config": "catalog:infra",
     "@akistack/tsconfig": "catalog:infra",
     "@rslib/core": "catalog:solution",
+    "@rstest/adapter-rslib": "catalog:solution",
+    "@rstest/core": "catalog:solution",
+    "@rstest/coverage-v8": "catalog:solution",
     "@types/node": "catalog:infra",
-    "@vitest/coverage-v8": "catalog:solution",
     "oxfmt": "catalog:infra",
     "oxlint": "catalog:infra",
     "oxlint-tsgolint": "catalog:infra",
-    "typescript": "catalog:infra",
-    "vitest": "catalog:solution"
+    "typescript": "catalog:infra"
   },
   "autor": "{{ authorName }}"
 }

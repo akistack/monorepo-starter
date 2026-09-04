@@ -13,7 +13,7 @@
     "lint": "oxlint --type-aware",
     "lint:fix": "oxlint --type-aware --fix",
     "preview": "rsbuild preview",
-    "test": "vitest --run --passWithNoTests",
+    "test": "rstest",
     "test:coverage": "npm run test -- --coverage",
     "typecheck": "tsc -p ./tsconfig.json --noEmit"
   },
@@ -29,16 +29,17 @@
     "@rsbuild/core": "catalog:solution",
     "@rsbuild/plugin-react": "catalog:solution",
     "@rsbuild/plugin-tailwindcss": "catalog:solution",
+    "@rstest/adapter-rsbuild": "catalog:solution",
+    "@rstest/core": "catalog:solution",
+    "@rstest/coverage-v8": "catalog:solution",
     "@tanstack/router-plugin": "catalog:solution",
     "@types/react": "catalog:react",
     "@types/react-dom": "catalog:react",
-    "@vitest/coverage-v8": "catalog:solution",
     "oxfmt": "catalog:infra",
     "oxlint": "catalog:infra",
     "oxlint-tsgolint": "catalog:infra",
     "tailwindcss": "catalog:solution",
-    "typescript": "catalog:infra",
-    "vitest": "catalog:solution"
+    "typescript": "catalog:infra"
   },
   "autor": "Aki"
 }
